@@ -1,0 +1,200 @@
+html {
+	font-family: sans-serif;
+	-webkit-text-size-adjust:100%; /*Для разных браузеров*/
+	-ms-text-size-adjust:100%;	   /*Для разных браузеров*/
+}
+body {
+	margin: 0;
+}
+img {	/*Стиль картинок*/
+	display: block;
+	border: 0;
+	width: 100%;
+	height: auto;
+}
+.screen-reader-text, /*Стиль якорей*/
+.return-link { 
+	height: 1px;
+	width: 1px;
+	background-color: #f1f1f1;
+	border-radius: 20px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	color:#21759b;
+	display: block;
+	font-size: 15px;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	text-decoration: none;
+	width: auto;
+	opacity: 0.6; /*Прозрачность*/
+}
+.screen-reader-text { /*Якорь перехода к контенту*/
+position: absolute;
+padding: 8px;
+top:5px;
+}
+.return-link { /*Якорь возвращения в начало*/
+	position: fixed;
+	padding: 4px;
+	bottom:5px;
+}
+.screen-reader-text:hover, /*При наведении, фокусе якорь к контенту*/
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	padding: 8px 9px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	opacity: 1;
+}
+.return-link:hover, /*При наведении, фокусе якорь в начало*/
+.return-link:active,
+.return-link:focus {
+	padding: 4px 5px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	opacity: 1;
+}
+body, /*На всякий случай написал стиль на потенциально возможные теги*/
+button,
+input,
+select,
+textarea {
+	color: #171515;
+	font-family: 'Helvetica', Arial, sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+	overflow-wrap: break-word; /*Перенос слов на строку ниже, когда кончается место в контейнере*/
+	text-shadow: 1px 0 1px rgba(0, 0, 0, 0.1);
+}
+h2,h1,p { /*Стиль заголовков*/
+	margin: 0;
+	padding: 1em 0;
+}
+header h1 {
+	padding: 10px;
+	text-align: center;
+	text-shadow: 1px -1px 5px rgba(0, 0, 0, 0.6);
+}
+h2,h3 {
+	text-shadow: 1px 0 2px rgba(0, 0, 0, 0.3);
+}
+h2 {
+	text-align: center;
+}
+.summary li:hover { /*Стиль в Содержании*/
+	padding: 1px;
+}
+.summary li:hover a {
+	margin: 1px;
+}
+.summary ol {
+   list-style: none;
+   counter-reset: li;
+}
+.summary li:before {
+   counter-increment: li;
+   content: counters(li, ".") ". ";
+}
+
+.site {
+	background: #e4e1e1;
+	min-height: 100vh;
+}
+a {
+	color: red;
+	text-decoration: none;
+}
+a:hover,
+a:focus {
+	text-decoration:underline; /*Линия при наведении или фокусе*/
+}
+.sidebar a {
+	color: blue;
+}
+.main-content,
+.sidebar,
+.twin {
+	padding: 1em 2em;
+}
+.masthead { /*цвет фона, текста, скругление краев и тени*/
+	padding: 1em 2em;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius: 10px;
+	box-shadow: 3px -1px 15px 4px rgba(0, 0, 0, 0.5);
+	background: #2185c5;
+	color: white;
+}
+.footer-down {
+	border-top-left-radius:10px; /*цвет фона, текста, скругление краев и тени*/
+	border-top-right-radius: 10px;
+	box-shadow: 3px -1px 15px 4px rgba(0, 0, 0, 0.5);
+	text-shadow: 1px 0px 1px rgba(245, 244, 244, 0.1);
+	font-size: 11px;
+  	text-transform: uppercase;
+  	letter-spacing: 2px;
+  	text-align: center;
+}
+.main-content { /*цвет фона, текста, скругление краев и тени*/
+	background: white;
+	border-radius: 10px 0 0 10px;
+	box-shadow: 3px -1px 15px 4px rgba(0, 0, 0, 0.5);
+}
+.sidebar { /*цвет фона, текста, скругление краев и тени*/
+	border-radius: 0 10px 0 0; 
+	box-shadow: 3px -1px 15px 4px rgba(0, 0, 0, 0.5);
+	background: #c96653;
+}
+#first-twin-side.twin { /*цвет фона, текста, скругление краев и тени*/
+	background :#2185c5;
+	border-radius: 10px 0 0 10px;
+	box-shadow: -3px -1px 15px 4px rgba(0, 0, 0, 0.5);
+}
+#last-twin-side.twin { /*цвет фона, текста, скругление краев и тени*/
+background: #3a8ebf;
+border-radius: 0 0 10px 0;
+box-shadow: 3px -1px 15px 4px rgba(0, 0, 0, 0.5);
+}
+.colophon {
+	padding: 2em;
+	background: #1d1f21;
+	color: white;
+
+}
+.colophon a {
+	color: white;
+}
+@supports not (display: grid) { /*Если браузером не поддерживаются гриды*/
+	.site {
+		max-width: 50em;
+		margin: 0 auto;
+	}
+}
+@media screen and (min-width: 600px) { /*Попробовал использовать гриды*/
+	@supports (display: grid) {
+		.site {
+			display: grid;
+			grid-template-columns: 1fr repeat(6,
+				minmax(auto, 10em)) 1fr;
+			grid-template-rows: minmax(1em, auto) 1fr
+			auto minmax(1em,auto);
+		}
+		.masthead,
+		.colophon {
+			grid-column: span 8;
+		}
+		.main-content {
+			grid-column: 2/6;
+		}
+		.sidebar {
+			grid-column: 6/8;
+		}
+		.twin {
+			grid-column: 2/5;
+			grid-row: 3/4;
+		}
+		#last-twin-side.twin {
+			grid-column: 5/8;
+		}
+	}	
+	
+}
